@@ -1,9 +1,10 @@
 #include <iostream>
+// T: 类的静态(static)数据成员
 
 class Point {
 public:
   Point(int x = 0, int y = 0) : x(x), y(y) { count++; };
-  virtual ~Point() { count -= 1; };
+  virtual ~Point() { count--; };
   Point(Point &p) {
     x = p.x;
     y = p.y;
@@ -20,7 +21,7 @@ private:
   static int count;
 };
 
-int Point::count = 0;
+int Point::count = 0; // 定义和初始化
 
 int main(int argc, char *argv[]) {
   Point a(4, 5);

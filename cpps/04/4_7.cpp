@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+// T: 结构体
 
 struct Student {
   int num;
@@ -15,5 +16,6 @@ int main(int argc, char *argv[]) {
   std::cout << "Name: " << stu.name << std::endl;
   std::cout << "Sex: " << stu.sex << std::endl;
   std::cout << "Age: " << stu.age << std::endl;
+
   return 0;
 }

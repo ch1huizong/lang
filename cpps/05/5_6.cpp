@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+// T: 友元函数
 
 class Point {
 public:
@@ -7,13 +8,14 @@ public:
 
   int getX() { return x; };
   int getY() { return y; };
-  friend float dist(Point &a, Point &b);
+  friend float dist(Point &a, Point &b); // 声明友元函数
 
 private:
   int x, y;
 };
 
-float dist(Point &a, Point &b) {
+
+float dist(Point &a, Point &b) { // 类外定义
   double x = a.x - b.x;
   double y = a.y - b.y;
   return static_cast<float>(sqrt(x * x + y * y));

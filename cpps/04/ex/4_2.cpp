@@ -1,8 +1,7 @@
 #include <iostream>
-// 组合整体
+// T: 类的组合, Computer类
 
 enum CPU_Rank { P1 = 1, P2, P3, P4, P5, P6, P7 };
-
 class CPU {
 private:
   CPU_Rank rank;
@@ -17,7 +16,6 @@ public:
     std::cout << "构造了一个CPU!" << std::endl;
   }
 
-  /*
   CPU(CPU &c) {
     rank = c.rank;
     frequency = c.frequency;
@@ -25,7 +23,6 @@ public:
 
     std::cout << "拷贝构造了一个CPU!" << std::endl;
   }
-  */
 
   ~CPU() { std::cout << "析构了一个CPU!" << std::endl; }
 
@@ -42,7 +39,6 @@ public:
 };
 
 enum RAM_Type { DDR2 = 2, DDR3, DDR4 };
-
 class RAM {
 
 private:
@@ -73,7 +69,6 @@ public:
 
 enum CDROM_Interface { SATA, USB };
 enum CDROM_Install_type { external, built_in };
-
 class CD_ROM {
 
 private:
@@ -102,6 +97,7 @@ public:
   void Stop() { std::cout << "CD_ROM停止运行!" << std::endl; }
 };
 
+// 组合大类
 class COMPUTER {
 
 private:
@@ -158,11 +154,9 @@ int main() {
   COMPUTER my_computer(a, b, c, 128, 10);
   std::cout << "*************************\n";
 
-  /*
   my_computer.Run();
   my_computer.Stop();
   std::cout << "*************************\n";
-  */
 
   return 0;
 }

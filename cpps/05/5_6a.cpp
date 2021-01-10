@@ -1,7 +1,8 @@
 #include <iostream>
+// T: 友元类
 
 class A {
-  friend class B;
+  friend class B; // 声明友元类
 
 public:
   A(int x = 0) : x(x){};
@@ -22,7 +23,7 @@ private:
   A a;
 };
 
-void B::set(int i) { a.x = i; }
+void B::set(int i) { a.x = i; } // 可以访问a的private x了
 
 void B::display() { a.display(); }
 
@@ -31,5 +32,6 @@ int main(int argc, char *argv[]) {
   B b(a);
   b.set(777);
   b.display();
+
   return 0;
 }

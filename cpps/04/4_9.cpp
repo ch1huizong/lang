@@ -1,4 +1,5 @@
 #include <iostream>
+// T: 枚举类
 
 enum class Side { Right, Left };
 

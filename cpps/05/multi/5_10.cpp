@@ -1,5 +1,6 @@
 #include "Point.h"
 #include <iostream>
+// T: 类的使用实例
 
 int main(int argc, char *argv[]) {
   Point a(4, 5);

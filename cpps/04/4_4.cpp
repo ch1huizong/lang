@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+// T: 类的组合
 
 // Point类
 class Point {

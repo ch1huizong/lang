@@ -1,5 +1,6 @@
 #include "Point.h"
 #include <iostream>
+// T: Point类实现文件
 
 int Point::count = 0;
 

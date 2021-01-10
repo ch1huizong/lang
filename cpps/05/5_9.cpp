@@ -1,5 +1,6 @@
 #include <cmath>
 #include <iostream>
+// T:常引用
 
 class Point {
 public:
@@ -21,7 +22,7 @@ float dist(const Point &a, const Point &b) {
 }
 
 int main(int argc, char *argv[]) {
-  Point p1(1, 1), p2(4, 5);
+  const Point p1(1, 1), p2(4, 5);
   // std::cout << p1.x << std::endl; //私有成员不能访问
   std::cout << "The distance is " << dist(p1, p2) << std::endl;
 

@@ -1,4 +1,5 @@
 #include <iostream>
+// T: 类的组合，CPU类
 
 enum CPU_Rank { P1 = 1, P2, P3, P4, P5, P6, P7 };
 

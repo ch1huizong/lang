@@ -1,6 +1,7 @@
 #ifndef POINT_H
-#define POINT_H
+#define POINT_H 
 
+// 类声明文件
 class Point {
 private:
   int x, y;

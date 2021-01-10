@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+// T: 联合体
 
 class ExamInfo {
 
@@ -14,7 +15,7 @@ private:
 
 public:
   ExamInfo(std::string name, char grade)
-      : name(name), grade(grade), mode(GRADE) {}
+      : name(name), grade(grade), mode(GRADE) {} // 传入后会设定mode
   ExamInfo(std::string name, bool pass) : name(name), pass(pass), mode(PASS) {}
   ExamInfo(std::string name, int percent)
       : name(name), percent(percent), mode(PERCENTAGE) {}
