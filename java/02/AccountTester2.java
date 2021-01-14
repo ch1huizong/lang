@@ -1,6 +1,6 @@
 public class AccountTester2 {
   public static void main(String[] args) {
-    BankAccount bob,  mary, biff;
+    BankAccount bob, mary, biff;
 
     bob = BankAccount.sample1();
     mary = BankAccount.sample1();

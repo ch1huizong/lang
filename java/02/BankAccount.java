@@ -70,7 +70,7 @@ public class BankAccount {
   public static BankAccount sample1() {
     BankAccount ac = new BankAccount();
     ac.setOwnerName("che");
-    //ac.setAccountNumber(554000);
+    // ac.setAccountNumber(554000);
     ac.deposit(1000);
 
     return ac;
@@ -79,7 +79,7 @@ public class BankAccount {
   public static BankAccount sample2() {
     BankAccount ac = new BankAccount();
     ac.setOwnerName("yu");
-    //ac.setAccountNumber(554001);
+    // ac.setAccountNumber(554001);
     ac.deposit(1000);
     ac.deposit(2000);
 
@@ -89,8 +89,19 @@ public class BankAccount {
   public static BankAccount sample3() {
     BankAccount ac = new BankAccount();
     ac.setOwnerName("wang");
-    //ac.setAccountNumber(554002);
+    // ac.setAccountNumber(554002);
 
     return ac;
+  }
+
+  public boolean equals(Object x) {
+    if (this.getClass() != x.getClass()) {
+      return false;
+    }
+
+    BankAccount b = (BankAccount) x;
+    return ((this.getOwnerName().equals(b.getOwnerName()))
+        && (this.getAccountNumber() == b.getAccountNumber())
+        && (this.getBalance() == b.getBalance()));
   }
 }
