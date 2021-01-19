@@ -1,10 +1,10 @@
-// T: zip - 命令行读入一系列文本文件
+// T: 压缩和解压缩 - zip格式 - 命令行读入一系列文本文件
 
 import java.io.*;
-import java.util.*;
 import java.util.zip.*;
 
 public class ZipOutputStreamTester {
+
   public static void main(String[] args) throws IOException {
     ZipOutputStream out =
         new ZipOutputStream(new BufferedOutputStream(new FileOutputStream("test.zip")));

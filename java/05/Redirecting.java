@@ -4,8 +4,12 @@ import java.io.*;
 
 public class Redirecting {
   public static void main(String[] args) throws IOException {
-    BufferedInputStream in = new BufferedInputStream(new FileInputStream("Redirecting.java"));
-    PrintStream out = new PrintStream(new BufferedOutputStream(new FileOutputStream("test.out")));
+    BufferedInputStream in =
+        new BufferedInputStream(new FileInputStream("Redirecting.java")); // 输入流
+    PrintStream out =
+        new PrintStream(new BufferedOutputStream(new FileOutputStream("test.out"))); // 输出流
+
+    // 重定向标准输入输出
     System.setIn(in);
     System.setOut(out);
     System.setErr(out);

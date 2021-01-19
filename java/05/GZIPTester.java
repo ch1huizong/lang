@@ -1,4 +1,4 @@
-// T: 压缩和解压缩gzip文件
+// T: 文件压缩解压缩 - gzip格式
 
 import java.io.*;
 import java.util.zip.*;

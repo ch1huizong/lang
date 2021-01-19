@@ -1,8 +1,9 @@
-// T: 通过字节复制，完成文件复制
+// T: 二进制文件- DataInputStream/DataOutputStream -通过字节复制，完成文件复制
 
 import java.io.*;
 
 public class CopyBytes {
+
   public static void main(String[] args) {
     if (args.length != 2) {
       System.out.println("Please enter the file names");
@@ -26,15 +27,14 @@ public class CopyBytes {
       try {
         int data;
         while (true) {
-          data = in.readUnsignedByte();
-          out.writeByte(data);
+          data = in.readUnsignedByte(); // 读字节
+          out.writeByte(data); // 写字节
         }
       } catch (EOFException eof) {
         in.close();
         out.close();
         return;
       }
-
     } catch (FileNotFoundException e) {
       System.out.println("Problem opening files");
     } catch (IOException e) {

@@ -1,4 +1,4 @@
-// T: 自己抛出异常
+// T: 异常 - 生成并抛出异常
 
 public class ThrowTest {
   public static void main(String[] args) {

@@ -1,4 +1,4 @@
-// T: 非检查型异常-数组越界
+// T: 异常 - 非检查型异常(数组越界)
 
 public class HelloWorld {
   public static void main(String[] args) {

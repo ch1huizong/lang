@@ -1,10 +1,11 @@
-// T: 读文本文件 - BufferedReader
+// T: 文本文件- 读 - BufferedReader
 
 import java.io.*;
 
 public class BufferedReaderTester {
   public static void main(String[] args) {
     String name = "Hello.txt", line;
+
     try {
       BufferedReader in = new BufferedReader(new FileReader(name));
       while ((line = in.readLine()) != null) {

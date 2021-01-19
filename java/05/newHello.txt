@@ -1,3 +1,0 @@
-hello world!
-welcome to the cs programming world!
-I hope you can create your works!

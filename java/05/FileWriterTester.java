@@ -1,4 +1,4 @@
-// T: 写文本文件 - FileWriter
+// T: 文本文件- 写 - FileWriter
 
 import java.io.*;
 
@@ -7,7 +7,7 @@ public class FileWriterTester {
     String name = "Hello.txt";
 
     try {
-      FileWriter w = new FileWriter(name, true);
+      FileWriter w = new FileWriter(name, true); // 追加
 
       w.write("Hello!\n");
       w.write("This is my first text file, \n");
