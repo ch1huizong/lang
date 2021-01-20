@@ -1,12 +1,10 @@
-// T: 增强For循环遍历
+// T: 遍历 - 增强For循环遍历
 
-import java.util.Enumeration;
 import java.util.Vector;
 
 public class ForTester {
   public static void main(String[] args) {
-    Enumeration<String> days;
-    Vector<String> v = new Vector();
+    Vector<String> v = new Vector<String>();
     v.add("Sunday");
     v.add("Monday");
     v.add("Tuesday");
@@ -14,7 +12,6 @@ public class ForTester {
     v.add("Thursday");
     v.add("Friday");
     v.add("Saturday");
-    days = v.elements();
 
     for (String day : v) {
       System.out.println(day);

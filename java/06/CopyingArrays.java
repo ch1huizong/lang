@@ -1,5 +1,6 @@
-import java.util.*;
 // T: Arrays的基本操作fill
+
+import java.util.*;
 
 public class CopyingArrays {
   public static void main(String[] args) {
@@ -17,8 +18,8 @@ public class CopyingArrays {
 
     Integer[] u = new Integer[10];
     Integer[] v = new Integer[5];
-    Arrays.fill(u, new Integer(47));
-    Arrays.fill(v, new Integer(99));
+    Arrays.fill(u, new Integer(147));
+    Arrays.fill(v, new Integer(199));
     System.arraycopy(v, 0, u, u.length / 2, v.length);
 
     System.out.println(Arrays.toString(u));
