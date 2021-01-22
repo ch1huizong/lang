@@ -1,5 +1,45 @@
-// T: 图形测试类
-public class ShapeTester {
+// T: 图形类 - class基础知识
+
+class Circle {
+  static double PI = 3.14159265; // 类变量
+  int radius; // private 私有成员
+
+  public Circle(int radius) {
+    this.radius = radius;
+  }
+
+  public Circle() {
+    this.radius = 0;
+  }
+
+  public double circumference() {
+    return 2 * PI * radius;
+  }
+
+  public void enlarge(int factor) {
+    radius = radius * factor;
+  }
+
+  public boolean fitsInside(Rectangle r) {
+    return (2 * radius < r.width) && (2 * radius < r.height);
+  }
+
+  public int getRadius() {
+    return this.radius;
+  }
+
+  public void setRadius(int radius) {
+    this.radius = radius;
+  }
+}
+
+class Rectangle {
+
+  double width = 10.128;
+  double height = 5.734;
+}
+
+public class Shape {
 
   static double maxArea(Circle c, Rectangle... varRec) { // 可变长参数函数定义
     double max = 0;
@@ -16,6 +56,7 @@ public class ShapeTester {
     Rectangle y;
 
     // 初始化
+    System.out.println("初始化...");
     x = new Circle();
     y = new Rectangle();
     System.out.println(x);
@@ -25,6 +66,7 @@ public class ShapeTester {
     System.out.println("\n");
 
     // 测试类变量
+    System.out.println("测试类变量...");
     System.out.println(x.PI);
     System.out.println(Circle.PI);
     x.PI = 3.14;
@@ -33,6 +75,7 @@ public class ShapeTester {
     System.out.println("\n");
 
     // 测试实例方法
+    System.out.println("测试实例方法...");
     Circle c1 = new Circle();
     c1.radius = 8;
     Circle c2 = new Circle();
@@ -46,6 +89,7 @@ public class ShapeTester {
     System.out.println("\n");
 
     // 测试可变长参数
+    System.out.println("测试变成参数函数定义...");
     Circle c = new Circle();
     Rectangle r1 = new Rectangle();
     Rectangle r2 = new Rectangle();

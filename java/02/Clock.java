@@ -1,3 +1,5 @@
+// T: 类创建举例_1
+
 public class Clock {
   int hour;
   int minute;

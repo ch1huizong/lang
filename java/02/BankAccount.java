@@ -1,12 +1,13 @@
-// T: 银行帐号综合类
-import java.text.DecimalFormat;
+// T: 类的综合应用 - 银行帐号
 
 public class BankAccount {
   private static int LAST_ACCOUNT_NUMBER = 0;
+
   private String ownerName;
   private int accountNumber;
   private float balance;
 
+  // this重载构造方法
   public BankAccount() {
     this("", 0.0f);
   }
@@ -23,9 +24,9 @@ public class BankAccount {
 
   public String toString() {
     return ("Account #"
-        + accountNumber
+        + new java.text.DecimalFormat("000000").format(accountNumber)
         + " with balance "
-        + new DecimalFormat("$0.00").format(balance));
+        + new java.text.DecimalFormat("$0.00").format(balance));
   }
 
   public String getOwnerName() {
@@ -70,7 +71,6 @@ public class BankAccount {
   public static BankAccount sample1() {
     BankAccount ac = new BankAccount();
     ac.setOwnerName("che");
-    // ac.setAccountNumber(554000);
     ac.deposit(1000);
 
     return ac;
@@ -79,7 +79,6 @@ public class BankAccount {
   public static BankAccount sample2() {
     BankAccount ac = new BankAccount();
     ac.setOwnerName("yu");
-    // ac.setAccountNumber(554001);
     ac.deposit(1000);
     ac.deposit(2000);
 
@@ -89,7 +88,6 @@ public class BankAccount {
   public static BankAccount sample3() {
     BankAccount ac = new BankAccount();
     ac.setOwnerName("wang");
-    // ac.setAccountNumber(554002);
 
     return ac;
   }
@@ -103,5 +101,20 @@ public class BankAccount {
     return ((this.getOwnerName().equals(b.getOwnerName()))
         && (this.getAccountNumber() == b.getAccountNumber())
         && (this.getBalance() == b.getBalance()));
+  }
+
+  public static void main(String[] args) {
+    BankAccount bob, mary, biff;
+
+    bob = BankAccount.sample1();
+    mary = BankAccount.sample1();
+    biff = BankAccount.sample2();
+
+    mary.setOwnerName("Mary");
+    mary.deposit(250);
+
+    System.out.println(bob);
+    System.out.println(mary);
+    System.out.println(biff);
   }
 }

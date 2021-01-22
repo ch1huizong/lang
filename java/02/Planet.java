@@ -1,5 +1,7 @@
-// T: 枚举类
+// T: 枚举类_02
+
 public enum Planet {
+  // 枚举值
   MERCURY(3.303e+23, 2.4397e6),
   VENUS(4.869e+24, 6.0518e6),
   EARTH(5.976e+24, 6.37814e6),
@@ -18,11 +20,11 @@ public enum Planet {
   }
 
   private double mass() {
-    return mass;
+    return this.mass;
   }
 
   private double radius() {
-    return radius;
+    return this.radius;
   }
 
   // universal gravitational constant  (m3 kg-1 s-2)
@@ -42,7 +44,8 @@ public enum Planet {
       System.exit(-1);
     }
     double earthWeight = Double.parseDouble(args[0]);
-    double mass = earthWeight / EARTH.surfaceGravity();
+    double mass = earthWeight / EARTH.surfaceGravity(); // 质量?
+
     for (Planet p : Planet.values())
       System.out.printf("Your weight on %s is %f%n", p, p.surfaceWeight(mass));
   }
