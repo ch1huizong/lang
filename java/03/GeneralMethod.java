@@ -1,4 +1,4 @@
-// T: 泛形方法
+// T: 泛形方法_04
 
 public class GeneralMethod {
   <Type> void printClassName(Type object) { // 定义泛型方法

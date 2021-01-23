@@ -34,7 +34,7 @@ public class Apple {
   }
 
   // Object的equals主要判断是否是同一个目标!
-  public boolean equals(Object obj) { // 运算符== 对应哪一个方法?
+  public boolean equals(Object obj) {
     if (obj instanceof Apple) {
       Apple a = (Apple) obj;
       return (color.equals(a.getColor()) && (ripe == a.getRipe()));

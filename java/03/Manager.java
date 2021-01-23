@@ -1,3 +1,21 @@
+// T: 类的继承举例_01
+
+class Person {
+  public String name;
+
+  public String getName() {
+    return name;
+  }
+}
+
+class Employee extends Person {
+  public int employeeNumber;
+
+  public int getEmployeeNumber() {
+    return employeeNumber;
+  }
+}
+
 public class Manager extends Employee {
   public String responsibilities;
 

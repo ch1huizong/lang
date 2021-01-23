@@ -1,4 +1,4 @@
-// T: 泛形类
+// T: 泛形类_04
 
 class ShowType {
   public static void show(GeneralType<?> o) { // 通配符
@@ -6,7 +6,7 @@ class ShowType {
   }
 }
 
-public class GeneralType<Type extends Number> { // 有限制的泛型
+public class GeneralType<Type extends Object> { // 有限制的泛型
 
   private Type object;
 
@@ -23,9 +23,9 @@ public class GeneralType<Type extends Number> { // 有限制的泛型
     GeneralType<Double> d = new GeneralType<Double>(0.33);
     GeneralType<String> s = new GeneralType<String>("hello");
 
-    System.out.println("i.object = " + (Integer) i.getObj());
-    System.out.println("d.object = " + (Double) d.getObj());
-    System.out.println("s.object = " + (String) s.getObj());
+    System.out.println("i.object = " + i.getObj());
+    System.out.println("d.object = " + d.getObj());
+    System.out.println("s.object = " + s.getObj());
 
     ShowType.show(i);
     ShowType.show(d);
