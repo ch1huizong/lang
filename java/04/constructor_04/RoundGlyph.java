@@ -1,3 +1,5 @@
+// T: 构造函数 + 多态会引起的问题
+
 public class RoundGlyph extends Glyph {
   int radius = 1;
 

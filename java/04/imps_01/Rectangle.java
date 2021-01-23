@@ -1,4 +1,4 @@
-// T: 实现接口的-矩形
+// T: 接口实现类 - Rectangle
 
 public class Rectangle implements Shape2D {
 
@@ -9,7 +9,6 @@ public class Rectangle implements Shape2D {
 		this.w = w;
 		this.h = h;
   }
-
 
   public double area() {
     return (w * h);

@@ -103,6 +103,10 @@ public class BankAccount {
         && (this.getBalance() == b.getBalance()));
   }
 
+  public int hashCode() {
+    return super.hashCode();
+  }
+
   public static void main(String[] args) {
     BankAccount bob, mary, biff;
 

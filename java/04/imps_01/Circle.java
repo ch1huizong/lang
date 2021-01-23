@@ -1,6 +1,6 @@
-// T: 实现接口的-圆
+// T: 接口实现类 - Circle
 
-public class Circle implements Shape2D {
+public class Circle implements Shape2D, Color { // 多继承
 
 	private double r;
   private String color;
@@ -18,9 +18,4 @@ public class Circle implements Shape2D {
     System.out.println("color = " + this.color);
   }
 
-  public static void main(String[] args) {
-    Circle c = new Circle(2.0);
-    c.setColor("blue");
-    System.out.println("Area = " + c.area());
-  }
 }
