@@ -7,10 +7,11 @@ import org.json.JSONObject;
 import com.che.helloworld.TwitterHelper.ApiException;
 
 import android.content.Context;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.util.Linkify;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView m_header;
     private ListView m_tweet_list;
     private InputMethodManager im_ctrl;
-    private JSONArray jresult;
+    private JSONArray tweets;
+    private LayoutInflater m_inflater;  // 为了布局更灵活？
+
 
     /**
      * Called when the activity is first created.
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         m_btn_ok.setOnClickListener(ok_handler);
 
         im_ctrl = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        m_inflater = LayoutInflater.from(this);
     }
 
     @Override
@@ -80,24 +84,28 @@ public class MainActivity extends AppCompatActivity {
             /* hide the soft keyboard */
             im_ctrl.hideSoftInputFromWindow(m_search_key.getWindowToken(), 0);
 
-            new TwitterTask().execute(m_search_key.getText().toString());
+            new TwitterTask().execute("?per_page=50&q=" + Uri.encode(m_search_key.getText().toString()));
+
             /* show a brief message */
-            Toast.makeText(getApplicationContext(),
-                    getString(R.string.hello) + " " + m_search_key.getText(),
-                    Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.search_msg) + " " + m_search_key.getText(), Toast.LENGTH_LONG).show();
         }
     };
 
     /* Params (String), Progress (Integer), Result (String) */
     private class TwitterTask extends AsyncTask<String, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+            // TODO Auto-generated method stub
+            super.onPreExecute();
+        }
 
         @Override
         protected String doInBackground(String... params) {
             String query = params[0];
             if (query == null) return "";
+
             try {
-                String result = TwitterHelper.downloadFromServer(query);
-                return result;
+                return TwitterHelper.downloadFromServer(query);
             } catch (ApiException e) {
                 e.printStackTrace();
                 Log.e("HSD", "Problem making twitter search request");
@@ -107,29 +115,32 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            m_tweet_list.setAdapter(new JSONAdapter(getApplicationContext()));
             try {
                 JSONObject obj = new JSONObject(result);
-                jresult = obj.getJSONArray("items");
-                String info = obj.getString("total_count");
-                m_header.setText(info);
+                tweets = obj.getJSONArray("items");
+
+                if (tweets == null || tweets.length() == 0) {
+                    Toast.makeText(getApplicationContext(),
+                            "No tweets on " + m_search_key.getText(), Toast.LENGTH_LONG).show();
+                } else
+                    m_tweet_list.setAdapter(new JSONAdapter(getApplicationContext()));
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
         }
     }
 
     /*--- ListAdapter for rendering JSON data ---*/
     private class JSONAdapter extends BaseAdapter {
-        private Context mCtx;
-
-        public JSONAdapter(Context c) {
-            mCtx = c;
+        JSONAdapter(Context c)
+        {
         }
 
         @Override
         public int getCount() {
-            return jresult == null ? 0 : jresult.length();
+            return tweets == null ? 0 : tweets.length();
         }
 
         @Override
@@ -144,18 +155,25 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public View getView(int pos, View convertView, ViewGroup parent) {
-            TextView tv;
+            View tv;
+            TextView t;
 
             if (convertView == null)
-                tv = new TextView(mCtx);
+                tv = m_inflater.inflate(R.layout.item, parent, false); // 最关键的是这点
             else
-                tv = (TextView) convertView;
+                tv = convertView;
+
             try {
-                JSONObject obj = jresult.getJSONObject(pos);
-                tv.setText(obj.getString("full_name") + ": " +
-                        obj.getString("description"));
+                JSONObject obj = tweets.getJSONObject(pos);
+
+                t = (TextView) tv.findViewById(R.id.text);
+
+                t.setText(obj.getString("full_name") + ": " + obj.getString("description"));
+
+                t = (TextView) tv.findViewById(R.id.created_at);
+                t.setText(obj.getString("created_at"));
             } catch (JSONException e) {
-                tv.setText(e.getMessage());
+                Log.e("Che", e.getMessage());
             }
             return tv;
         }

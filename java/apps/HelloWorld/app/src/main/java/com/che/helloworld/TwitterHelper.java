@@ -1,6 +1,5 @@
 package com.che.helloworld;
 
-
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
@@ -15,9 +14,7 @@ import android.net.Uri;
 
 public class TwitterHelper {
 
-    //private static final String TWITTER_SEARCH = "http://search.twitter.com/search.json?q=%s";
-    private static final String TWITTER_SEARCH = "https://api.github.com/search/repositories?q=%s&sort=stars";
-
+    private static final String TWITTER_SEARCH = "https://api.github.com/search/repositories";
     private static final int HTTP_STATUS_OK = 200;
     private static byte[] buff = new byte[1024];
 
@@ -39,7 +36,7 @@ public class TwitterHelper {
 
     static synchronized String downloadFromServer(String keyword)
             throws ApiException {
-        String url = String.format(TWITTER_SEARCH, Uri.encode(keyword));
+        String url = TWITTER_SEARCH +  keyword;
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         try {
