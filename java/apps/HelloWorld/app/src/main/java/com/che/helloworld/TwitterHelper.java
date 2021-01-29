@@ -34,13 +34,14 @@ public class TwitterHelper {
         }
     }
 
+    //
     static synchronized String downloadFromServer(String keyword)
             throws ApiException {
-        String url = TWITTER_SEARCH +  keyword;
+        String url = TWITTER_SEARCH + keyword;
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(url);
         try {
-            HttpResponse response = client.execute(request);
+            HttpResponse response = client.execute(request); // 开始下载数据
             StatusLine status = response.getStatusLine();
             if (status.getStatusCode() != HTTP_STATUS_OK)
                 throw new ApiException("Invalid response from search.twitter.com" + status.toString());
