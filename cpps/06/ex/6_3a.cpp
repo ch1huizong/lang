@@ -5,5 +5,6 @@
 int main() {
   std::string s1 = "abc", s2 = "def";
   std::cout << s1 + s2 << std::endl;
+
   return 0;
 }

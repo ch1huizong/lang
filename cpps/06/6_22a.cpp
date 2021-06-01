@@ -2,12 +2,11 @@
 // T: 第一种方法，复制构造
 
 class IntNum {
-
-public:
+ public:
   IntNum(int x = 0) : xptr(new int(x)) {
     std::cout << "Calling constructor..." << std::endl;
   }
-  IntNum(const IntNum &n) : xptr(new int(*n.xptr)) {
+  IntNum(const IntNum& n) : xptr(new int(*n.xptr)) {
     std::cout << "Calling copy constructor..." << std::endl;
   }
   ~IntNum() {
@@ -16,16 +15,16 @@ public:
   }
   int getInt() { return *xptr; }
 
-private:
-  int *xptr;
+ private:
+  int* xptr;
 };
 
 IntNum getNum() {
   IntNum a;
-  return a; // 有变化
+  return a;  // 有变化
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   std::cout << getNum().getInt() << std::endl;
   return 0;
 }

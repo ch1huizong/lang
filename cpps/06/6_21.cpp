@@ -3,7 +3,7 @@
 // T: 浅复制
 
 class Point {
-public:
+ public:
   Point() : x(0), y(0) {
     std::cout << "Default Constructor called." << std::endl;
   };
@@ -19,12 +19,12 @@ public:
     y = newY;
   }
 
-private:
+ private:
   int x, y;
 };
 
 class ArrayofPoints {
-public:
+ public:
   ArrayofPoints(int size) : size(size) { points = new Point[size]; }
   ~ArrayofPoints() {
     std::cout << "Deleting..." << std::endl;
@@ -32,17 +32,17 @@ public:
   };
 
   // 特别注意以下返回值
-  Point &element(int index) {
+  Point& element(int index) {
     assert(index >= 0 && index < size);
     return points[index];
   }
 
-private:
-  Point *points;
+ private:
+  Point* points;
   int size;
 };
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int count;
   std::cout << "Please enter the count of points: ";
   std::cin >> count;

@@ -1,5 +1,6 @@
 #include <iostream>
-// T: 指针函数, 寻找数组中第一个0元素地址
+// T: 指针函数
+// 寻找数组中第一个0元素地址
 
 int main(int argc, char *argv[]) {
   int array[10];
@@ -13,16 +14,18 @@ int main(int argc, char *argv[]) {
   if (zeroptr != nullptr) {
     std::cout << "Got: " << zeroptr << std::endl;
   }else{
-    std::cout << "Failed ! Not Found!" << std::endl;
+    std::cout << "Failed! Not Found!" << std::endl;
   }
+
   return 0;
 }
 
-int *search(int *a, int num) { // 返回索引也行
+int* search(int *a, int num) { 
   for (int i = 0; i < num; ++i) {
     if (a[i] == 0) {
       return &a[i];
     }
   }
+
   return nullptr;
 }

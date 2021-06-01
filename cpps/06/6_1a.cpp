@@ -1,7 +1,7 @@
 #include <iostream>
 // T: 输出fib序列前20项
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int f[20] = {1, 1};
   for (int i = 2; i < 20; ++i) {
     f[i] = f[i - 1] + f[i - 2];

@@ -1,5 +1,5 @@
-#include "employee.h"
 #include <iostream>
+#include "employee.h"
 
 int main() {
   Employee e("Wang Er", "Haidian", "Beijing", "100084");

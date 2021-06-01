@@ -2,16 +2,16 @@
 // T: 第二种方法，移动构造(没有效果)
 
 class IntNum {
-public:
+ public:
   IntNum(int x = 0) : xptr(new int(x)) {
     std::cout << "Calling constructor..." << std::endl;
   }
-  IntNum(const IntNum &n) : xptr(new int(*n.xptr)) {
+  IntNum(const IntNum& n) : xptr(new int(*n.xptr)) {
     std::cout << "Calling copy constructor..." << std::endl;
   }
 
-  IntNum(IntNum &&n) : xptr(n.xptr) { // 移动构造函数
-    n.xptr = nullptr; // here
+  IntNum(IntNum&& n) : xptr(n.xptr) {  // 移动构造函数
+    n.xptr = nullptr;                  // here
     std::cout << "Calling move constructor..." << std::endl;
   }
   ~IntNum() {
@@ -20,8 +20,8 @@ public:
   }
   int getInt() { return *xptr; }
 
-private:
-  int *xptr;
+ private:
+  int* xptr;
 };
 
 IntNum getNum() {
@@ -29,7 +29,7 @@ IntNum getNum() {
   return a;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   std::cout << getNum().getInt() << std::endl;
   return 0;
 }

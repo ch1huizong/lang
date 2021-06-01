@@ -1,17 +1,18 @@
 #include <iostream>
-// T: (难点)矩阵转置, 利用二级指针
+// T: 矩阵转置, 利用二维数组, 动态数组
 
-void swap(int &a, int &b) {
+void swap(int& a, int& b) {
   int temp = a;
   a = b;
   b = temp;
 }
 
 int main() {
-  int **a;          // 二级指针, 有没有其他方式？
-  a = new int *[3]; // 唯一要求，a指向的block块内容是指针
+  // 动态内存分配生成二维数组, HaHa
+  int** a;  // 二级指针, 有没有其他方式？
+  a = new int*[3];
   for (int i = 0; i < 3; i++)
-    a[i] = new int[3]; // a里的每个元素指向int数组首地址
+    a[i] = new int[3];  // a里的每个元素指向int数组首地址
 
   std::cout << "输入9个整数作为矩阵元素值: " << std::endl;
   for (int i = 0; i < 3; i++)
@@ -35,5 +36,6 @@ int main() {
       std::cout << a[i][j] << ' ';
     std::cout << std::endl;
   }
+
   return 0;
 }
