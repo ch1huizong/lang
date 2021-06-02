@@ -1,5 +1,6 @@
 #include <iostream>
-// T: 矩阵转置, 利用二维数组, 动态数组
+// T: 矩阵转置, 利用二维数组, 动态数组（多级指针)
+// Value
 
 void swap(int& a, int& b) {
   int temp = a;
@@ -9,7 +10,7 @@ void swap(int& a, int& b) {
 
 int main() {
   // 动态内存分配生成二维数组, HaHa
-  int** a;  // 二级指针, 有没有其他方式？
+  int** a;  // 二级指针, 有没有其他方式？有，指针数组
   a = new int*[3];
   for (int i = 0; i < 3; i++)
     a[i] = new int[3];  // a里的每个元素指向int数组首地址

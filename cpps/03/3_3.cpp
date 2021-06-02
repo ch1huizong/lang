@@ -1,6 +1,7 @@
 #include <iostream>
+// T: 函数调用-3 - 计算PI
 
-double arctan(double x) { // 没看懂呢
+double arctan(double x) {  // 还是没看懂呢!
   double sqr = x * x;
   double e = x;
   double r = 0;
@@ -12,17 +13,16 @@ double arctan(double x) { // 没看懂呢
     e = e * sqr;
     i += 2;
   }
+
   return r;
 }
 
 int main() {
   double a = 16.0 * arctan(1 / 5.0);
-  double b =
-      4.0 *
-      arctan(
-          1 /
-          239.0); //注意：因为整数相除结果取整，如果参数写1/5，1/239，结果就都是0
+  double b = 4.0 * arctan(1 / 239.0);
+  //注意：因为整数相除结果取整，如果参数写1/5，1/239，结果就都是0
 
   std::cout << "PI = " << a - b << std::endl;
+
   return 0;
 }

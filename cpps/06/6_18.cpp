@@ -1,5 +1,6 @@
 #include <iostream>
-// T: 动态创建多维数组 - 此时注意左边的指针类型
+// T: 创建多维度动态数组 - 此时注意左边的指针类型
+// Value
 
 int main(int argc, char* argv[]) {
   int(*cp)[9][8] = new int[7][9][8];  // cp的指向的内容块是数组
