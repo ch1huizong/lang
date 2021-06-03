@@ -1,4 +1,5 @@
 #include <iostream>
+// T: 统计正负数
 
 int main(int argc, char *argv[]) {
   int i = 0, j = 0, n;

@@ -1,4 +1,5 @@
 #include <iostream>
+// T: 测试基本数据类型长度
 
 int main(int argc, char *argv[]) {
   std::cout << "The size of an int is:\t\t" << sizeof(int) << "bytes."
@@ -13,5 +14,6 @@ int main(int argc, char *argv[]) {
             << std::endl;
   std::cout << "The size of a double is:\t\t" << sizeof(double) << "bytes."
             << std::endl;
+
   return 0;
 }

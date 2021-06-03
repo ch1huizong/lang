@@ -1,4 +1,5 @@
 #include <iostream>
+// T: 流程控制-switch
 
 int main(int argc, char *argv[]) {
   int day;
@@ -30,5 +31,6 @@ int main(int argc, char *argv[]) {
     std::cout << "Day out of range Sunday .. Saturday" << std::endl;
     break;
   }
+
   return 0;
 }

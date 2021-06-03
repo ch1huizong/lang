@@ -1,6 +1,7 @@
 #include <iostream>
+// T: cin使用
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int a, b, x;
 
   std::cout << "input value of a : ";

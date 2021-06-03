@@ -1,9 +1,11 @@
 #include <iostream>
+// T: do-while  
+// 数字反转
 
 int main(int argc, char *argv[]) {
   int n, right_digit, newnum = 0;
 
-  std::cout << "Enter the number: ";
+  std::cout << "Enter the number:";
   std::cin >> n;
 
   std::cout << "The number in reverse order is ";
