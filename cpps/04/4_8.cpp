@@ -1,30 +1,29 @@
 #include <iostream>
 #include <string>
-// T: 联合体
+// T: 联合体使用 - 共用存储空间
 
 class ExamInfo {
 
 private:
   std::string name; // 课程名字
   enum { GRADE, PASS, PERCENTAGE } mode;
-  union {
+  union {  // 无名联合体
     char grade;  // 等级制
     bool pass;   // 通过与否
     int percent; // 百分制
   };             // 共享内存
 
 public:
-  ExamInfo(std::string name, char grade)
-      : name(name), grade(grade), mode(GRADE) {} // 传入后会设定mode
-  ExamInfo(std::string name, bool pass) : name(name), pass(pass), mode(PASS) {}
-  ExamInfo(std::string name, int percent)
-      : name(name), percent(percent), mode(PERCENTAGE) {}
+  ExamInfo(std::string name, char grade): name(name), grade(grade), mode(GRADE) {} // 传入后会设定mode
+  ExamInfo(std::string name, bool pass): name(name), pass(pass), mode(PASS) {}
+  ExamInfo(std::string name, int percent): name(name), percent(percent), mode(PERCENTAGE) {}
 
   void show();
 };
 
 void ExamInfo::show() {
   std::cout << name << " : ";
+
   switch (mode) {
   case GRADE:
     std::cout << grade << std::endl;
