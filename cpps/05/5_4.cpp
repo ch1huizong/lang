@@ -2,10 +2,10 @@
 // T: 类的静态(static)数据成员
 
 class Point {
-public:
+ public:
   Point(int x = 0, int y = 0) : x(x), y(y) { count++; };
   virtual ~Point() { count--; };
-  Point(Point &p) {
+  Point(Point& p) {
     x = p.x;
     y = p.y;
     count++;
@@ -16,14 +16,14 @@ public:
 
   void showCount() { std::cout << "Object count = " << count << std::endl; }
 
-private:
+ private:
   int x, y;
   static int count;
 };
 
-int Point::count = 0; // 定义和初始化
+int Point::count = 0;  // 定义和初始化
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   Point a(4, 5);
   std::cout << "Point A: " << a.getX() << "," << a.getY() << std::endl;
   a.showCount();

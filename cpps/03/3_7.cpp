@@ -1,13 +1,9 @@
 #include <iostream>
 // T: 函数嵌套调用
 
-int fun2(int m) {
-  return m * m;
-}
+int fun2(int m) { return m * m; }
 
-int fun1(int x, int y) {
-  return fun2(x) + fun2(y);
-}
+int fun1(int x, int y) { return fun2(x) + fun2(y); }
 
 int main(int argc, char* argv[]) {
   int a, b;

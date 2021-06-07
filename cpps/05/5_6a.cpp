@@ -2,32 +2,32 @@
 // T: 友元类
 
 class A {
-  friend class B; // 声明友元类
+  friend class B;  // 声明友元类
 
-public:
+ public:
   A(int x = 0) : x(x){};
   void display() { std::cout << x << std::endl; }
 
-private:
+ private:
   int x;
 };
 
 class B {
-public:
+ public:
   B(A a) : a(a){};
 
   void set(int i);
   void display();
 
-private:
+ private:
   A a;
 };
 
-void B::set(int i) { a.x = i; } // 可以访问a的private x了
+void B::set(int i) { a.x = i; }  // 可以访问a的private x了
 
 void B::display() { a.display(); }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   A a;
   B b(a);
   b.set(777);

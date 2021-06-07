@@ -2,7 +2,7 @@
 // T: 无符号数
 
 int main(int argc, char* argv[]) {
-  //unsigned int x;
+  // unsigned int x;
   int x;
   unsigned int y = 100;
   unsigned int z = 50;

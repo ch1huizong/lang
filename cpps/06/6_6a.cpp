@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
   int* const p2 = &a;
   *p2 = 666;
   printf("a = %d\n", a);
-  //p2 = &b; //指针p2不能转向
+  // p2 = &b; //指针p2不能转向
 
   return 0;
 }

@@ -4,7 +4,7 @@ int x = 1, y = 2;
 
 void fn1();
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   std::cout << "Begin..." << std::endl;
   std::cout << "x = " << x << std::endl;
   std::cout << "y = " << y << std::endl;

@@ -1,7 +1,7 @@
 #include <iostream>
 // T: 变量
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int radius;
 
   std::cout << "Please enter the radius!\n";

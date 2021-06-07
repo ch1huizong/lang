@@ -1,5 +1,5 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 // T: 函数重载
 
 int max1(int a, int b) {
@@ -12,9 +12,7 @@ int max1(int a, int b) {
   }
 }
 
-int max1(int a, int b, int c) {
-  return max1(max1(a, b), c);
-}
+int max1(int a, int b, int c) { return max1(max1(a, b), c); }
 
 double max1(double a, double b) {
   if (fabs(a - b) < 1e-10) {
@@ -26,9 +24,7 @@ double max1(double a, double b) {
   }
 }
 
-double max1(double a, double b, double c) {
-  return max1(max1(a, b), c);
-}
+double max1(double a, double b, double c) { return max1(max1(a, b), c); }
 
 int main(int argc, char* argv[]) {
   int a, b, c;

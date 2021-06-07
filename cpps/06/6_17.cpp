@@ -25,7 +25,7 @@ class Point {
 };
 
 int main(int argc, char* argv[]) {
-  Point* ptr = new Point[2]; // Point(1, 1)不行啊!
+  Point* ptr = new Point[2];  // Point(1, 1)不行啊!
   ptr[0].move(5, 10);
   ptr[1].move(15, 20);
 

@@ -1,9 +1,9 @@
 #include <iostream>
 // T: 符号常量和变量初始化
 
-int main(int argc, char *argv[]) {
-  const double pi(3.14159); //符号常量，必须开始就初始化
-  int radius(0);            // 变量声明并初始化
+int main(int argc, char* argv[]) {
+  const double pi(3.14159);  //符号常量，必须开始就初始化
+  int radius(0);             // 变量声明并初始化
 
   std::cout << "The initial value of radius is:" << radius << std::endl;
 

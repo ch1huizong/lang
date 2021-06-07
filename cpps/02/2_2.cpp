@@ -1,7 +1,7 @@
 #include <iostream>
 // T: leapYear
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int year;
   bool isLeapYear;
 

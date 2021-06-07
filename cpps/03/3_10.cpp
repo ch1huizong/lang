@@ -13,7 +13,6 @@ void move(char src, char dest) {
 
 //将n个盘子从src针移动到dest针，以medium针作为中转
 void hanoi(int n, char src, char medium, char dest) {
-
   if (n == 1) {
     move(src, dest);
   } else {

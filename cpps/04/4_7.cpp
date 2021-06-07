@@ -4,14 +4,14 @@
 // T: 结构体使用
 // 注意C++中的结构体是一种特殊的类
 
-struct Student { // 与C结构体的定义相同了, 当里面没有函数成员
+struct Student {  // 与C结构体的定义相同了, 当里面没有函数成员
   int num;
   std::string name;
   char sex;
   int age;
 };
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   Student stu = {97001, "Lin Lin", 'F', 19};
   std::cout << "Num: " << stu.num << std::endl;
   std::cout << "Name: " << stu.name << std::endl;

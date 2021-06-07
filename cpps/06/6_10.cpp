@@ -14,7 +14,8 @@ int main(int argc, char* argv[]) {
     std::cin >> x;
 
     splitFloat(x, &n, &f);
-    std::cout << "Interger Part = " << n << ", Fraction Part = " << f << std::endl;
+    std::cout << "Interger Part = " << n << ", Fraction Part = " << f
+              << std::endl;
   }
 
   return 0;

@@ -12,13 +12,11 @@ int main() {
   std::cout << "输入9个整数作为矩阵元素值: " << std::endl;
 
   for (int i = 0; i < 3; i++)
-    for (int j = 0; j < 3; j++)
-      std::cin >> a[i][j];
+    for (int j = 0; j < 3; j++) std::cin >> a[i][j];
 
   std::cout << "初始矩阵: " << std::endl;
   for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++)
-      std::cout << a[i][j] << ' ';
+    for (int j = 0; j < 3; j++) std::cout << a[i][j] << ' ';
     std::cout << std::endl;
   }
 
@@ -28,8 +26,7 @@ int main() {
 
   std::cout << "转置后矩阵: " << std::endl;
   for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++)
-      std::cout << a[i][j] << ' ';
+    for (int j = 0; j < 3; j++) std::cout << a[i][j] << ' ';
     std::cout << std::endl;
   }
 

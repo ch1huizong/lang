@@ -1,7 +1,7 @@
 #include <iostream>
 // T: 流程控制-for
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int n;
   std::cout << "Enter a positive integer : ";
   std::cin >> n;

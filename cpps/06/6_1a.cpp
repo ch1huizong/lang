@@ -8,8 +8,7 @@ int main(int argc, char* argv[]) {
   }
 
   for (int i = 0; i < 20; ++i) {
-    if (i % 5 == 0)
-      std::cout << std::endl;
+    if (i % 5 == 0) std::cout << std::endl;
 
     std::cout.width(12);
     std::cout << f[i];

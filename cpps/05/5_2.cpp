@@ -4,7 +4,7 @@
 int i = 1;
 
 void other() {
-  static int a = 2; // 具有静态作用域
+  static int a = 2;  // 具有静态作用域
   static int b;
   int c = 10;
 
@@ -17,11 +17,11 @@ void other() {
   b = a;
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   static int a;
   int b = -10;
   int c = 0;
-  
+
   std::cout << "--MAIN--" << std::endl;
   std::cout << "i: " << i << " a: " << a << " b: " << b << " c: " << c
             << std::endl;

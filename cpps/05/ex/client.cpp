@@ -1,4 +1,5 @@
 #include "client.h"
+
 #include <iostream>
 
 void Client::ChangeServerName(char name) {

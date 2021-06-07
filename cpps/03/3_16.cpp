@@ -1,14 +1,10 @@
 #include <iostream>
-// T: 函数重载 
+// T: 函数重载
 // 编译器根据参数数目和参数类型实现重载
 
-int sumOfSquare(int a, int b) {
-  return a * a + b * b;
-}
+int sumOfSquare(int a, int b) { return a * a + b * b; }
 
-double sumOfSquare(double a, double b) {
-  return a * a + b * b;
-}
+double sumOfSquare(double a, double b) { return a * a + b * b; }
 
 int main(int argc, char* argv[]) {
   int m, n;

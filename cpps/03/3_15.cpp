@@ -21,7 +21,8 @@ int main(int argc, char* argv[]) {
 }
 
 int getVolume(int length, int width, int height) {
-  std::cout << std::setw(5) << length << std::setw(5) << width << std::setw(5) << height << "\t";
+  std::cout << std::setw(5) << length << std::setw(5) << width << std::setw(5)
+            << height << "\t";
 
   return length * width * height;
 }

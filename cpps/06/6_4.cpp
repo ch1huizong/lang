@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
 
   std::cout << std::endl;
 
-  for (int & e : b) {  // e是数组中元素的别名?
+  for (int& e : b) {  // e是数组中元素的别名?
     e += 2;
     std::cout << e << std::endl;
   }

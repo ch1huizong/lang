@@ -8,7 +8,7 @@ int common(int n, int k) {
   } else if (n == k || k == 0) {
     return 1;
   } else {
-    return common(n - 1, k) + common(n - 1, k - 1); // ?
+    return common(n - 1, k) + common(n - 1, k - 1);  // ?
   }
 }
 

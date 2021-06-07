@@ -1,14 +1,14 @@
 #include <iostream>
 // T: 枚举类型
 
-enum GameResult {WIN, LOSE, TIE, CANCEL}; // 符号常量， 有值
+enum GameResult { WIN, LOSE, TIE, CANCEL };  // 符号常量， 有值
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   GameResult result;
   enum GameResult omit = CANCEL;
 
   for (int i = WIN; i <= CANCEL; ++i) {
-    result = GameResult(i); // int -> enum, 类型转换
+    result = GameResult(i);  // int -> enum, 类型转换
 
     if (result == omit) {
       std::cout << "The game was cancelled" << std::endl;

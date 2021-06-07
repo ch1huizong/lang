@@ -1,7 +1,7 @@
 #include <iostream>
 // T: 流程控制-if
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   int x, y;
   std::cout << "Enter x and y:";
   std::cin >> x >> y;

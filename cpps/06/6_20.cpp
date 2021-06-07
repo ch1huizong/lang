@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
   std::cout << "n = ";
   std::cin >> n;
 
-  std::vector<double> arr(n); // 动态分配内存空间了
+  std::vector<double> arr(n);  // 动态分配内存空间了
   std::cout << "Please input " << n << " real numbers: " << std::endl;
 
   for (int i = 0; i < n; ++i) {
@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
 double average(const std::vector<double>& arr) {
   double sum = 0;
-  for (int i = 0; i < arr.size(); ++i) { // Vector对象有一个size属性
+  for (int i = 0; i < arr.size(); ++i) {  // Vector对象有一个size属性
     sum += arr[i];
   }
 

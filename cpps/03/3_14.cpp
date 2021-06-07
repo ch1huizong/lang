@@ -3,9 +3,7 @@
 
 const double PI = 3.14159265358979;
 
-inline double calArea(double radius) {
-  return PI * radius * radius;
-}
+inline double calArea(double radius) { return PI * radius * radius; }
 
 int main(int argc, char* argv[]) {
   double r = 3.0;

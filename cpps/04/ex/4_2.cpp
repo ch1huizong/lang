@@ -3,12 +3,12 @@
 
 enum CPU_Rank { P1 = 1, P2, P3, P4, P5, P6, P7 };
 class CPU {
-private:
+ private:
   CPU_Rank rank;
   int frequency;
   float voltage;
 
-public:
+ public:
   CPU(CPU_Rank r, int f, float v) {
     rank = r;
     frequency = f;
@@ -16,7 +16,7 @@ public:
     std::cout << "构造了一个CPU!" << std::endl;
   }
 
-  CPU(CPU &c) {
+  CPU(CPU& c) {
     rank = c.rank;
     frequency = c.frequency;
     voltage = c.voltage;
@@ -40,13 +40,12 @@ public:
 
 enum RAM_Type { DDR2 = 2, DDR3, DDR4 };
 class RAM {
-
-private:
+ private:
   enum RAM_Type type;
-  unsigned int frequency; // MHz
-  unsigned int size;      // GB
+  unsigned int frequency;  // MHz
+  unsigned int size;       // GB
 
-public:
+ public:
   RAM(RAM_Type t, unsigned int f, unsigned int s) {
     type = t;
     frequency = f;
@@ -70,13 +69,12 @@ public:
 enum CDROM_Interface { SATA, USB };
 enum CDROM_Install_type { external, built_in };
 class CD_ROM {
-
-private:
+ private:
   enum CDROM_Interface interface_type;
-  unsigned int cache_size; // MB
+  unsigned int cache_size;  // MB
   CDROM_Install_type install_type;
 
-public:
+ public:
   CD_ROM(CDROM_Interface i, unsigned int s, CDROM_Install_type it) {
     interface_type = i;
     cache_size = s;
@@ -99,15 +97,14 @@ public:
 
 // 组合大类
 class COMPUTER {
-
-private:
+ private:
   CPU my_cpu;
   RAM my_ram;
   CD_ROM my_cdrom;
-  unsigned int storage_size; // GB
-  unsigned int bandwidth;    // MB
+  unsigned int storage_size;  // GB
+  unsigned int bandwidth;     // MB
 
-public:
+ public:
   COMPUTER(CPU c, RAM r, CD_ROM cd, unsigned int s, unsigned int b);
 
   ~COMPUTER() { std::cout << "析构了一个COMPUTER!" << std::endl; }

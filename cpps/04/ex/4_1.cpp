@@ -4,7 +4,7 @@
 enum CPU_Rank { P1 = 1, P2, P3, P4, P5, P6, P7 };
 
 class CPU {
-public:
+ public:
   CPU(CPU_Rank r, int f, float v) : rank(r), frequency(f), voltage(v) {
     std::cout << "构造了一个CPU！" << std::endl;
   };
@@ -22,13 +22,13 @@ public:
   void Run() { std::cout << "CPU开始运行!" << std::endl; };
   void Stop() { std::cout << "CPU停止运行!" << std::endl; }
 
-private:
-  CPU_Rank rank; // 等级
+ private:
+  CPU_Rank rank;  // 等级
   int frequency;
   float voltage;
 };
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
   CPU a(P6, 300, 2.8);
   a.Run();
   a.Stop();

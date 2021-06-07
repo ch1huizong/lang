@@ -1,28 +1,24 @@
 #include <iostream>
 
-class B; //前向引用声明
+class B;  //前向引用声明
 
 class A {
-
-public:
+ public:
   void f(B b);
 };
 
 class B {
-
-public:
+ public:
   void g(A a);
 };
 
-class Fred; //前向引用声明
+class Fred;  //前向引用声明
 
 class Barney {
-
-  Fred x; //错误：类Fred的声明尚不完善
-  //Fred* x;
+  Fred x;  //错误：类Fred的声明尚不完善
+  // Fred* x;
 };
 
 class Fred {
-
   Barney y;
 };

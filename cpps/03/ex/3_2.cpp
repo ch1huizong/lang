@@ -4,7 +4,7 @@
 int fib(int n);
 
 int main(int argc, char* argv[]) {
-  int n, answer; // 第n个fib数字是什么?
+  int n, answer;  // 第n个fib数字是什么?
 
   std::cout << "Enter number: ";
   std::cin >> n;
