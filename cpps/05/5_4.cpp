@@ -1,10 +1,10 @@
 #include <iostream>
-// T: 类的静态(static)数据成员
+// T: 类的静态(static)数据成员 - Point
 
 class Point {
  public:
   Point(int x = 0, int y = 0) : x(x), y(y) { count++; };
-  virtual ~Point() { count--; };
+  ~Point() { count--; };
   Point(Point& p) {
     x = p.x;
     y = p.y;
@@ -18,7 +18,7 @@ class Point {
 
  private:
   int x, y;
-  static int count;
+  static int count; // 类数据成员
 };
 
 int Point::count = 0;  // 定义和初始化

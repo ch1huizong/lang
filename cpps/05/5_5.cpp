@@ -1,10 +1,10 @@
 #include <iostream>
-// T: 类的静态函数成员
+// T: 类的静态函数成员 - Point
 
 class Point {
  public:
   Point(int x = 0, int y = 0) : x(x), y(y) { count++; };
-  virtual ~Point() { count -= 1; };
+  ~Point() { count -= 1; };
   Point(Point& p) {
     x = p.x;
     y = p.y;
@@ -22,10 +22,11 @@ class Point {
   int x, y;
   static int count;
 };
+
 int Point::count = 0;
 
 int main(int argc, char* argv[]) {
-  Point::showCount();
+  Point::showCount(); // 调用静态函数成员
 
   Point a(4, 5);
   std::cout << "Point A: " << a.getX() << "," << a.getY() << std::endl;
@@ -34,6 +35,10 @@ int main(int argc, char* argv[]) {
   Point b(a);
   std::cout << "Point B: " << b.getX() << "," << b.getY() << std::endl;
   Point::showCount();
+
+  // 对象调用静态函数成员
+  a.showCount();
+  b.showCount();
 
   return 0;
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+// T: 测试变量的作用域和生存期
 
 int x = 1, y = 2;
 

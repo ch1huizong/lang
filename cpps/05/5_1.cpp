@@ -1,5 +1,5 @@
 #include <iostream>
-// T: 变量作用域
+// T: 变量作用域 - 文件作用域/局部作用域
 
 int i;  // 文件作用域
 int main(int argc, char* argv[]) {

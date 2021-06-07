@@ -1,8 +1,8 @@
 #include <iostream>
-// T: 友元类
+// T: 友元类 - B
 
 class A {
-  friend class B;  // 声明友元类
+  friend class B;  // 声明友元类B
 
  public:
   A(int x = 0) : x(x){};

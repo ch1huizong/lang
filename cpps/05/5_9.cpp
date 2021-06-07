@@ -1,6 +1,6 @@
 #include <cmath>
 #include <iostream>
-// T:常引用
+// T:常引用 - 避免实参被改变
 
 class Point {
  public:
