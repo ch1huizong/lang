@@ -46,6 +46,7 @@ int main(int argc, char* argv[]) {
   int count;
   std::cout << "Please enter the count of points: ";
   std::cin >> count;
+
   ArrayofPoints points1(count);
   points1.element(0).move(5, 10);
   points1.element(1).move(15, 20);
@@ -59,6 +60,7 @@ int main(int argc, char* argv[]) {
 
   points1.element(0).move(25, 30);
   points1.element(1).move(35, 40);
+
   std::cout << "After the moving of points1" << std::endl;
   std::cout << "Point_0 of points2:" << points2.element(0).getX() << ","
             << points2.element(0).getY() << std::endl;

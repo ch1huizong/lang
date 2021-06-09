@@ -43,7 +43,8 @@ class ArrayofPoints {
   int size;
 };
 
-ArrayofPoints::ArrayofPoints(const ArrayofPoints& v) {  // 深层复制
+// 深层复制代码部分
+ArrayofPoints::ArrayofPoints(const ArrayofPoints& v) {
   size = v.size;
   points = new Point[size];
   for (int i = 0; i < size; ++i) {

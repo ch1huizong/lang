@@ -1,5 +1,7 @@
 #include <iostream>
 // T: 第二种方法，移动构造(没有效果)
+// 移动构造解决: 解绑"函数内部本地变量"原来的内存引用，赋予临时变量
+// 本质是资源控制权的转移, 引用同一块内存
 
 class IntNum {
  public:
@@ -14,6 +16,7 @@ class IntNum {
     n.xptr = nullptr;                  // here
     std::cout << "Calling move constructor..." << std::endl;
   }
+
   ~IntNum() {
     delete xptr;
     std::cout << "Destructing..." << std::endl;
@@ -31,5 +34,6 @@ IntNum getNum() {
 
 int main(int argc, char* argv[]) {
   std::cout << getNum().getInt() << std::endl;
+
   return 0;
 }
