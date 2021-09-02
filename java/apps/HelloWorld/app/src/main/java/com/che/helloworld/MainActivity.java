@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -124,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 twit_task.cancel(true);
                 alert("Cannot retrieve tweets...");
             }
+
         }
     };
 
